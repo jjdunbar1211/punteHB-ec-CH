@@ -9,9 +9,9 @@ function App() {
     <BrowserRouter>
       <NavBar />
       <Switch>
-        <Route path="/" exact component={ItemListContainer}/>
-        <Route path="/category/:categoryId" component={ItemListContainer}/>
-        <Route path="/item/:id" component={ItemDetailContainer}/>
+        <Route exact path="/" component={ItemListContainer}/>
+        <Route exact path="/category/:categoryId" component={ItemListContainer}/>
+        <Route exact path="/item/:id" component={ItemDetailContainer}/>
       </Switch>
     </BrowserRouter>
   );

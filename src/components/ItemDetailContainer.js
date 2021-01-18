@@ -1,5 +1,6 @@
 import React, { useEffect, useState} from 'react'
 import ItemDetail from './ItemDetail';
+import Spinner from './Spinner'
 import { useParams } from 'react-router-dom'
 import puntehbmochi1 from '../images/puntehb-mochi1.jpeg'
 import puntehbmochi2 from '../images/puntehb-mochi2.jpeg'
@@ -13,7 +14,7 @@ import puntehbmatera3 from '../images/puntehb-matera3.jpeg'
 
 const ItemDetailContainer = () => {
 
-    const [item, setItem ] = useState([]);
+    const [item, setItem ] = useState();
 
     const {id} = useParams()
 
@@ -116,18 +117,18 @@ const ItemDetailContainer = () => {
 
         itemsPromesa
             .then( items => {
-                let theItem = items.filter(i => i.id == id)
+                let theItem = items.filter(i => i.id == id)[0]
                 setItem(theItem)
             } 
             )
             .catch( error => console.log(error))
             
-    }, [])
+    }, [id])
 
-    return (      
-        <div >
-              <ItemDetail item={item} /> 
-        </div>
+    return ( 
+            <div >
+                {item ? <ItemDetail item={item} /> : < Spinner />}
+            </div> 
     )
 }
 
