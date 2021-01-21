@@ -5,8 +5,6 @@ const ItemDetail = ({item}) => {
 
   const stock = (item) ? item.initialStock : 0 
   const [ counter, setCounter ] = useState(1) 
-  const [ cart, setCart ] = useState([])
-  const [ isCartReady, setIsCartReady ] = useState(false)
 
   const incrementarCantidad = () => {
     if(counter <= stock -1){
@@ -19,11 +17,6 @@ const ItemDetail = ({item}) => {
       } else {
           console.log('No hay unidades de este producto en el carrito')
       }
-  }
-  const agregarAlCarrito = (itemCarrito) => {
-          //setCounter(1)  
-          setCart(...cart, { id:itemCarrito.id, title:itemCarrito.title, quantity: counter })
-          setIsCartReady(true) 
   }
 
     return(
@@ -54,8 +47,9 @@ const ItemDetail = ({item}) => {
               </div>
             </div>  
             <div>
-              <ItemCount add={incrementarCantidad} substract={descrementarCantidad} agregarAlCarrito={agregarAlCarrito} item={item} counter={counter} isCartReady={isCartReady}/>
+              <ItemCount add={incrementarCantidad} substract={descrementarCantidad} item={item} counter={counter} id={item.id}/>
             </div>  
+            
           </div>
         </div>  
       </div>

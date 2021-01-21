@@ -1,7 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import {Link} from 'react-router-dom'
+import { CartContext } from './CartContext';
 
-const ItemCount = ({ add, substract, agregarAlCarrito, item, counter, isCartReady }) => {
+const ItemCount = ({ item, id, add, substract, counter }) => {
+
+        const [ isCartReady, setIsCartReady ] = useState(false)
+        const { addToCart } = useContext(CartContext)
+    
+        const addAndReady = (item, counter, id) => {
+            addToCart(item, counter, id);
+            setIsCartReady(true)
+        }
+
     return (
         <div className="flex flex-col ">  
             <div className="flex justify-around">
@@ -17,7 +27,7 @@ const ItemCount = ({ add, substract, agregarAlCarrito, item, counter, isCartRead
                 { !isCartReady ? 
                     (<button
                         class="w-46 bg-white tracking-wide text-gray-800 font-bold rounded border-b-2 border-pink-200 hover:border-pink-800 hover:bg-grey-800 hover:text-pink-800 shadow-md py-2 px-6 inline-flex items-center"
-                        type="button" onClick={ () => agregarAlCarrito(item) }  > Agregar al carrito 
+                        type="button" onClick={ () => addAndReady(item, counter, id) }  > Agregar al carrito 
                     </button>)
                  : 
                     (<Link to="/cart">
