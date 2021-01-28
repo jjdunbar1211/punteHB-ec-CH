@@ -17,12 +17,12 @@ function App() {
     const query = collection.get()
     query
       .then(result => {
-        setFireItems(result.docs.map(p => ({id: p.id, ...p.data()})))
+        setFireItems(result.docs.map( p => ({id: p.id, pictureUrl: `/products-images/${p.pictureUrl}`, ...p.data()})))
       })
       .catch(error => {
         console.log(`[App - falla trayendo data de Firebase].  ${error}`)
       })
-  }, [fireItems])
+  }, [])
 
   return (
     <CartProvider>

@@ -1,21 +1,20 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import ItemCount from './itemCount'
-/* import puntehbmochi1 from '../images/puntehb-mochi1.jpeg'
-import puntehbmochi2 from '../images/puntehb-mochi2.jpeg'
-import puntehbmochi3 from '../images/puntehb-mochi3.jpeg'
-import puntehbrino1 from '../images/puntehb-rino1.jpeg'
-import puntehbrino2 from '../images/puntehb-rino2.jpeg'
-import puntehbrino3 from '../images/puntehb-rino3.jpeg'
-import puntehbmatera1 from '../images/puntehb-matera1.jpeg'
-import puntehbmatera2 from '../images/puntehb-matera2.jpeg'
-import puntehbmatera3 from '../images/puntehb-matera3.jpeg' */
-
+import {storage} from '../firebase'
 
 const ItemDetail = ({item}) => {
 
   const stock = (item) ? item.initialStock : 0 
   const [ counter, setCounter ] = useState(1) 
 
+  const st = storage.ref('/products-images')
+  const [img, setImg] = useState()
+
+  useEffect(() => {
+      st.child(item.pictureUrl).getDownloadURL()
+          .then( res => { setImg(res) })
+  })
+    
   const incrementarCantidad = () => {
     if(counter <= stock -1){
       setCounter(counter + 1)
@@ -31,7 +30,7 @@ const ItemDetail = ({item}) => {
 
     return(
       <div className="md:flex shadow-lg  mx-6 md:mx-auto my-40 max-w-lg md:max-w-2xl h-2/3">
-        <img className="h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6" src={item.pictureUrl} alt={`Producto: ${item.title}`} />
+        <img className="h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6" src={img ? img : 'wait'} alt={`Producto: ${item.title}`} />
         <div className="w-full md:w-2/3 px-4 py-4 bg-white rounded-lg">
           <div className="flex items-center">
             <h2 className="text-xl text-gray-800 font-medium mr-auto">{item.title}</h2>

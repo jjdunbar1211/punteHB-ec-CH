@@ -1,7 +1,6 @@
-import React,{useEffect,useContext} from 'react';
+import React, {useContext} from 'react';
 import {CartContext} from './CartContext';
 import { Link } from 'react-router-dom';
-import CartItem from './CartItem';
 
 const Cart = () => {
 
@@ -38,6 +37,7 @@ const Cart = () => {
                     }                                 
                     </tbody>
                 </table> 
+                <p className="bg-gray-100 text-lg font-bold shadow self-end">{`Total: $${total}`}</p>
             </div>  
             <div className="mt-4 flex justify-center">
                 {/* falta implementar la simulación de la compra */}

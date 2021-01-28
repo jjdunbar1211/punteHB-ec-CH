@@ -1,14 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import {storage} from '../firebase'
 
 const Item = ({ id, title, description, price, pictureUrl }) => {
+    const st = storage.ref('/products-images')
+    const [img, setImg] = useState()
 
+    useEffect(() => {
+        console.log(pictureUrl)
+        st.child(pictureUrl).getDownloadURL()
+            .then( res => { setImg(res) })
+    })
+    
     return (
 
         <Link to={`/item/${id}`}> 
             <div className="flex justify-center ">
                 <div className="card hover:shadow-lg w-6/12 "> 
-                    <img src={pictureUrl} alt={`Producto: $title`} className="h-32 sm:h-48 w-full object-cover" />
+                    <img src={img ? img : 'wait'} alt={`Producto: ${title}`} className="h-32 sm:h-48 w-full object-cover" />
                     <div className="m-4">
                         <span className="font-bold">{title}</span>
                         <hr />
