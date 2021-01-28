@@ -1,5 +1,15 @@
 import React, {useState} from 'react'
 import ItemCount from './itemCount'
+/* import puntehbmochi1 from '../images/puntehb-mochi1.jpeg'
+import puntehbmochi2 from '../images/puntehb-mochi2.jpeg'
+import puntehbmochi3 from '../images/puntehb-mochi3.jpeg'
+import puntehbrino1 from '../images/puntehb-rino1.jpeg'
+import puntehbrino2 from '../images/puntehb-rino2.jpeg'
+import puntehbrino3 from '../images/puntehb-rino3.jpeg'
+import puntehbmatera1 from '../images/puntehb-matera1.jpeg'
+import puntehbmatera2 from '../images/puntehb-matera2.jpeg'
+import puntehbmatera3 from '../images/puntehb-matera3.jpeg' */
+
 
 const ItemDetail = ({item}) => {
 
