@@ -67,7 +67,7 @@ const Cart = () => {
         { cart.length > 0 ? 
          <div>    
             <div className="mt-4 flex justify-center ">
-                <table className="table-auto shadow bg-gray-100 border-2 border-gray-800">
+                <table className="table-auto bg-gray-100 border-2 border-gray-800">
                     <thead className="border-b-2 border-gray-800">
                         <tr>
                             <th className="w-1/5">Artículo</th>
@@ -95,7 +95,7 @@ const Cart = () => {
                     }                                 
                     </tbody>
                 </table> 
-                <p className="bg-gray-100 border-b-2 border-t-2 border-r-2 border-gray-800 text-lg font-bold self-end">{`Total: $${total}`}</p>
+                <p className="bg-gray-100 px-2 border-b-2 border-t-2 border-r-2 border-gray-800 text-lg font-bold self-end">{`Total: $${total}`}</p>
             </div>  
             <div className="mt-4 flex justify-center">
                 <div hidden={openPay}>
