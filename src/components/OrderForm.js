@@ -121,9 +121,7 @@ const OrderForm = ({fnes}) => {
                                 onChange={ evt => { setFirstName(evt.target.value)
                                                     validateFirstName(evt.target.value) }
                                 }/>
-                            {/* <span>
-                                <ValidationMessage valid={firstNameValid} message={errorMsg.firstName}/>
-                            </span> */}
+                            { !(firstNameValid) ? <span className="text-sm font-semibold text-red-600"> {errorMsg.firstName} </span> : <></>}
                         </div>
                         {/* phone */}
                         <div className="mb-4">
@@ -132,9 +130,7 @@ const OrderForm = ({fnes}) => {
                                 onChange={ evt => { setPhone(evt.target.value)
                                                     validatePhone(evt.target.value) }
                                 }/>
-                            {/* <span>
-                                <ValidationMessage valid={firstNameValid} message={errorMsg.firstName}/>
-                            </span> */}
+                           { !(phoneValid) ? <span className="text-sm font-semibold text-red-600"> {errorMsg.phone} </span> : <></>}
                         </div>
                         {/* email */}
                         <div className="mb-4">
@@ -143,9 +139,7 @@ const OrderForm = ({fnes}) => {
                                 onChange={ evt => { setEmail(evt.target.value)
                                                     validateEmail(evt.target.value) }
                                 }/>
-                            {/* <span>
-                                <ValidationMessage valid={emailValid} message={errorMsg.email}/>
-                            </span> */}
+                            { !(emailValid) ? <span className="text-sm font-semibold text-red-600"> {errorMsg.email} </span> : <></>}
                         </div>
                         {/* confirm email */}
                         <div className="mb-4">
@@ -154,9 +148,7 @@ const OrderForm = ({fnes}) => {
                                 onChange={ evt => { setEmailConfirm(evt.target.value)
                                                     validateEmailConfirm(evt.target.value)}
                                 }/>
-                            {/* <span>
-                                <ValidationMessage valid={emailConfirmValid} message={errorMsg.emailConfirm}/>
-                            </span> */}
+                            { !(emailConfirmValid) ? <span className="text-sm font-semibold text-red-600"> {errorMsg.emailConfirm} </span> : <></>}
                         </div>
                         
                         {/* buttons */}
