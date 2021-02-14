@@ -24,6 +24,10 @@ const NavBar = ( {categories} ) => {
                             </li>)}
                         )
                     }
+                    <li className="ml-4">
+                        {/* eslint-disable-next-line */}
+                        <NavLink to={"/cart"}><CartWidget /></NavLink>  
+                    </li>
                 </ul>
             </div>
       </nav>
