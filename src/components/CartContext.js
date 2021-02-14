@@ -4,11 +4,15 @@ export const CartContext = React.createContext();
 
 function CartProvider( { children }) {
 
-    const [ cart, setCart ] = useState([])
+    const [ cart, setCart ] = useState(() => {
+        const localCart = localStorage.getItem('itemsAllevar')
+        return localCart ? JSON.parse(localCart) : []
+    })
     const [ quantity, setQuantity ] = useState(0)
     const [ total, setTotal ] = useState()
 
     useEffect(() => {
+        localStorage.setItem('itemsAllevar', JSON.stringify(cart))
         const totals = cart.map( p => p.price * p.amount)
         setTotal(totals.reduce((accumulated, t) => accumulated += t, 0))
         const cartQuantity = cart.length
