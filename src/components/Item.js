@@ -15,8 +15,8 @@ const Item = ({ id, title, description, price, pictureUrl }) => {
     return (
 
         <Link to={`/item/${id}`}> 
-            <div className="flex justify-center">
-                <div className="card bg-gray-50 hover:shadow-lg w-6/12 rounded overflow-hidden"> 
+            <div className="flex justify-center mb-2">
+                <div className="card bg-gray-50 hover:shadow-lg w-6/12 rounded overflow-hidden hover:bg-white"> 
                     <img src={img ? img : 'wait'} alt={`Producto: ${title}`} className="h-32 sm:h-48 w-full object-cover" />
                     <div className="m-4">
                         <span className="font-bold">{title}</span>

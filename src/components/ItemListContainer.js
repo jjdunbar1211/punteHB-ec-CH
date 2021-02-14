@@ -35,7 +35,7 @@ const ItemListContainer = ({products}) => {
 
         if(list.length > 0) {
             return(
-                <div className="p-4 h-screen bg-gray-100 ">  
+                <div className="p-4 h-full bg-gray-100">  
                     {
                         <ItemList list={ list } />
                     }  
