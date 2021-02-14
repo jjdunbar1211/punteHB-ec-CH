@@ -1,3 +1,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn1{
+    @apply cursor-not-allowed;
+    @apply py-2;
+    @apply px-4;
+    @apply rounded; 
+    @apply text-pink-400; 
+    @apply font-bold;
+    @apply border-2; 
+    @apply border-pink-400;
+    @apply opacity-50;
+}
+
+.btn2 {
+    @apply py-2;
+    @apply px-4;
+    @apply rounded; 
+    @apply text-pink-400; 
+    @apply font-bold;
+    @apply border-2; 
+    @apply border-pink-400;
+}
+
+.btn2:hover {
+    @apply text-white;
+    @apply bg-pink-400;
+    @apply shadow-md; 
+    @apply transition-all;
+    @apply ease-out;
+    @apply duration-500 
+}

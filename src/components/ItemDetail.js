@@ -21,7 +21,7 @@ const ItemDetail = ({item}) => {
     }
   }
   const descrementarCantidad = () => {
-      if(counter > 0) {
+      if(counter > 1) {
           setCounter(counter -1)
       } else {
           console.log('No hay unidades de este producto en el carrito')
@@ -29,11 +29,11 @@ const ItemDetail = ({item}) => {
   }
 
     return(
-      <div className="md:flex shadow-lg  mx-6 md:mx-auto my-40 max-w-lg md:max-w-2xl h-2/3">
-        <img className="h-full w-full md:w-1/3  object-cover rounded-lg rounded-r-none pb-5/6" src={img ? img : 'wait'} alt={`Producto: ${item.title}`} />
-        <div className="w-full md:w-2/3 px-4 py-4 bg-white rounded-lg">
+      <div className="md:flex md:content-center shadow-lg  mx-6 md:mx-auto max-w-lg md:max-w-2xl ">
+        <img className="h-full w-full md:w-1/3  object-cover overflow-hidden rounded-lg rounded-r-none pb-5/6" src={img ? img : 'wait'} alt={`Producto: ${item.title}`} />
+        <div className="w-full md:w-2/3 px-4 py-1 bg-white rounded-lg">
           <div className="flex items-center">
-            <h2 className="text-xl text-gray-800 font-medium mr-auto">{item.title}</h2>
+            <h2 className="text-xl font-bold text-gray-800 mr-auto">{item.title}</h2>
             <div className="flex justify-center flex-col p-1">
               <p className="text-right text-gray-500 font-semibold tracking-tighter">
                 apurate!!

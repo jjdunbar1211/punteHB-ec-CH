@@ -3,6 +3,7 @@ import {CartContext} from './CartContext';
 import { Link } from 'react-router-dom';
 import {firestore} from '../firebase';
 import firebase from 'firebase/app';
+import OrderForm from './OrderForm';
 
 const Cart = () => {
 
@@ -14,6 +15,28 @@ const Cart = () => {
     const [ name, setName ] = useState('')
     const [ phone, setPhone ] = useState()
     const [ email, setEmail ] = useState()
+
+    //Funcion para actualizr los stocks en firestore de los productos recien comprados
+    const updateStocks = () => {
+       
+        const db = firestore
+        const products =  db.collection('products');
+        const batchProducts = db.batch()
+
+        cart.forEach( itemCart => {
+            console.log(itemCart)
+            let aux = itemCart.stock - itemCart.amount
+            console.log(aux)
+            batchProducts.update(products.doc(itemCart.id),{initialStock: aux})
+        })
+
+        batchProducts
+            .commit()
+            .then(()=> {
+                console.log("Bache ok")
+            })
+            .catch(e => console.log(e))
+    }
 
     const submitOrder = () => {
 
@@ -28,6 +51,8 @@ const Cart = () => {
             date: firebase.firestore.Timestamp.fromDate(new Date()),
             total: total,
         }
+
+        updateStocks()
 
         orders.add(order)
             .then(({ id }) => alert("Id de tu compra: " + id))
@@ -81,11 +106,12 @@ const Cart = () => {
          :
         ( <div className="mt-4">
             <h1 className="text-center">Tu carrito aún está VACÍO</h1>
-            <Link className="flex justify-center" to={"/"}>
-                <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold mt-2 py-2 px-4 border border-gray-400 rounded shadow" onClick={clearCart} >
+                <OrderForm />
+            {/* <Link className="flex justify-center" to={"/"}>
+                 <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold mt-2 py-2 px-4 border border-gray-400 rounded shadow" onClick={clearCart} >
                     Ver PRODUCTOS
-                </button>
-            </Link>
+                </button> 
+            </Link> */}
         </div>)
         }
         { openPay && 
@@ -115,7 +141,7 @@ const Cart = () => {
                         </div> 
                         <div className="flex  ">
                             <Link to="/">       
-                                <button className="hover:bg-gray-100 text-black font-bold py-2 px-4 rounded border border-gray-400 shadow" type="button" 
+                                <button className="py-2 px-4 rounded text-pink-400 font-bold  border-2 border-pink-400 hover:text-white hover:bg-pink-400 hover:shadow-md transition-all ease-out duration-500 inline-flex items-center" 
                                         onClick={submitOrder} >
                                   Click aquí para terminar!
                                 </button>

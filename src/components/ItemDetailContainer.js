@@ -24,7 +24,7 @@ const ItemDetailContainer = () => {
      }, [id]);
 
     return ( 
-            <div >
+            <div className="bg-gray-100 flex justify-center items-center h-screen">
                 {item ? <ItemDetail item={item} /> : < Spinner />}
             </div> 
     )

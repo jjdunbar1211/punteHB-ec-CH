@@ -29,7 +29,7 @@ function CartProvider( { children }) {
             const cartWithNew = [...cartWithoutOld, newProduct]
             setCart(cartWithNew)            
         } else {
-            const newItem = { id: product.id, name: product.title, image: product.image, price: product.price, amount: counter }
+            const newItem = { id: product.id, name: product.title, image: product.image, price: product.price, stock: product.initialStock, amount: counter}
             setCart([...cart, newItem]) 
         }
     }

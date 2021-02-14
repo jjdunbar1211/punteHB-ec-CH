@@ -28,7 +28,7 @@ function App() {
     <CartProvider>
       <BrowserRouter>
         <NavBar />
-        <Switch>
+        <Switch >
           <Route exact path="/">
             <ItemListContainer  products={fireItems} />
           </Route>
