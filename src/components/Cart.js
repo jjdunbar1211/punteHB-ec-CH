@@ -1,6 +1,6 @@
 import React, {useContext, useState} from 'react';
 import {CartContext} from './CartContext';
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import {firestore} from '../firebase';
 import firebase from 'firebase/app';
 import OrderForm from './OrderForm';
@@ -106,7 +106,6 @@ const Cart = () => {
          :
         ( <div className="mt-4">
             <h1 className="text-center">Tu carrito aún está VACÍO</h1>
-                <OrderForm />
             {/* <Link className="flex justify-center" to={"/"}>
                  <button className="bg-white hover:bg-gray-100 text-gray-800 font-semibold mt-2 py-2 px-4 border border-gray-400 rounded shadow" onClick={clearCart} >
                     Ver PRODUCTOS
@@ -114,45 +113,47 @@ const Cart = () => {
             </Link> */}
         </div>)
         }
-        { openPay && 
-            <form onSubmit={submitOrder}>
-                <div className="flex justify-center mt-4 ">
-                    <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
-                        <div className="mb-4">
-                          <label className="block text-grey-darker text-sm font-bold mb-2" for="username">
-                            Nombre
-                          </label>
-                          <input className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="username" type="text" placeholder="Nombre"
-                                 onChange={(e) => setName(e.target.value)} />
-                        </div>
-                        <div className="mb-4">
-                          <label className="block text-grey-darker text-sm font-bold mb-2" for="phone">
-                            Teléfono
-                          </label>
-                          <input className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3" id="phone" type="number" placeholder="11 11111" 
-                                 onChange={(e) => setPhone(e.target.value)} />
-                        </div>
-                        <div className="mb-4">
-                          <label className="block text-grey-darker text-sm font-bold mb-2" for="email">
-                            Email
-                          </label>
-                          <input className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3" id="email" type="text" placeholder="micompra@gmail.com" 
-                                 onChange={(e) => setEmail(e.target.value)} />
-                        </div> 
-                        <div className="flex  ">
-                            <Link to="/">       
-                                <button className="py-2 px-4 rounded text-pink-400 font-bold  border-2 border-pink-400 hover:text-white hover:bg-pink-400 hover:shadow-md transition-all ease-out duration-500 inline-flex items-center" 
-                                        onClick={submitOrder} >
-                                  Click aquí para terminar!
-                                </button>
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-          </form>}
+        { openPay && <OrderForm fnes={{setName, setPhone, setEmail, submitOrder}} /> }
 
     </div>
     )
 }
 
 export default Cart;
+
+/* { openPay && 
+    <form onSubmit={submitOrder}>
+        <div className="flex justify-center mt-4 ">
+            <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
+                <div className="mb-4">
+                  <label className="block text-grey-darker text-sm font-bold mb-2" for="username">
+                    Nombre
+                  </label>
+                  <input className="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker" id="username" type="text" placeholder="Nombre"
+                         onChange={(e) => setName(e.target.value)} />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-grey-darker text-sm font-bold mb-2" for="phone">
+                    Teléfono
+                  </label>
+                  <input className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3" id="phone" type="number" placeholder="11 11111" 
+                         onChange={(e) => setPhone(e.target.value)} />
+                </div>
+                <div className="mb-4">
+                  <label className="block text-grey-darker text-sm font-bold mb-2" for="email">
+                    Email
+                  </label>
+                  <input className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-grey-darker mb-3" id="email" type="text" placeholder="micompra@gmail.com" 
+                         onChange={(e) => setEmail(e.target.value)} />
+                </div> 
+                <div className="flex  ">
+                    <Link to="/">       
+                        <button className="py-2 px-4 rounded text-pink-400 font-bold  border-2 border-pink-400 hover:text-white hover:bg-pink-400 hover:shadow-md transition-all ease-out duration-500 inline-flex items-center" 
+                                onClick={submitOrder} >
+                          Click aquí para terminar!
+                        </button>
+                    </Link>
+                </div>
+            </div>
+        </div>
+  </form>} */

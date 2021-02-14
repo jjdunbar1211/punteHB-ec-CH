@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
     return null;
 } */
 
-const OrderForm = () => {
+const OrderForm = ({fnes}) => {
 
     const [firstName, setFirstName] = useState('')
     const [phone, setPhone] = useState('')
@@ -44,6 +44,7 @@ const OrderForm = () => {
             console.log(errorMsg)
         }
 
+        fnes.setName(firstNameInput)
         setFirstNameValid(firstNameOK) 
          
         //this.setState({usernameValid, errorMsg}, this.validateForm);
@@ -59,6 +60,7 @@ const OrderForm = () => {
                 setErrorMsg({...errorMsg, phone: "Formato de teléfono celular no válido. Formato: xx-xxxx-xxxx"})
             }
             
+            fnes.setPhone(phoneInput)
             setPhoneValid(phoneOK)
             //this.setState({emailValid, errorMsg}, this.validateForm);
         }
@@ -87,6 +89,7 @@ const OrderForm = () => {
             setErrorMsg({...errorMsg, emailConfirm: "Los emails ingresados no coinciden"})
         }
 
+        fnes.setEmail(email2Input)
         setEmailConfirmValid(emailConfirmOK)
         //this.setState({ passwordConfirmValid, errorMsg}, this.validateForm);
     }
@@ -107,7 +110,7 @@ const OrderForm = () => {
 
     return (
         <div>
-            <form>
+            <form >
                 {console.log('testeando ' + firstNameValid && phoneValid && emailValid && emailConfirmValid)}
                 <div className="flex justify-center mt-4 ">
                     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
@@ -160,7 +163,9 @@ const OrderForm = () => {
                         <div className="flex  ">
                             <Link to="/">       
                                 <button type="submit" disabled={!(firstNameValid && phoneValid && emailValid && emailConfirmValid)} className={ !(firstNameValid && phoneValid && emailValid && emailConfirmValid) ? "btn1" : "btn2"} 
-                                        onClick={() => console.log('ok')} >
+                                        onClick={() => {
+                                            fnes.submitOrder()
+                                        }} >
                                   Click aquí para terminar !
                                 </button>
                             </Link>
