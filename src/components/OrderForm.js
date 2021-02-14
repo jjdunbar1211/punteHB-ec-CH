@@ -95,8 +95,8 @@ const OrderForm = ({fnes}) => {
     }
 
     // fn para limpiar el formulario
-    const resetForm = () => {
-
+    const resetForm = (evt) => {
+        evt.preventDefault()
         setFirstName('')
         setPhone('')
         setEmail('')
