@@ -106,26 +106,26 @@ const Cart = () => {
                     </button> 
                     👈👈👈
                 </div>
+                { openPay && <OrderForm fnes={{setName, setPhone, setEmail, submitOrder}} /> }
             </div>    
          </div>
          :
         ( <div className="mt-4">
             <h1 className="text-center font-semibold"> - Tu carrito aún está VACÍO - </h1>
-            <Link className="flex justify-center" to={"/"}>
-                <div>    
-                        👉👉👉
-                        <button className="btn2 mt-2 mx-2" onClick={clearCart} >
+                <div className="flex justify-center items-center">    
+                    👉👉👉
+                        <Link to={"/"}>
+                        <button className="btn2 mt-2 mx-2"  >
                             Ver PRODUCTOS
                         </button> 
-                        👈👈👈
+                        </Link>
+                    👈👈👈
                 </div>
-            </Link>
         </div>)
         }
-        { openPay && <OrderForm fnes={{setName, setPhone, setEmail, submitOrder}} /> }
-
     </div>
     )
+
 }
 
 export default Cart;
