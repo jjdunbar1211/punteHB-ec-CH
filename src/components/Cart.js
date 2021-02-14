@@ -96,12 +96,14 @@ const Cart = () => {
                 <p className="bg-gray-100 text-lg font-bold shadow self-end">{`Total: $${total}`}</p>
             </div>  
             <div className="mt-4 flex justify-center">
-                {/* falta implementar la simulación de la compra */}
-                <button className="btn2"
-                        onClick={() => {setOpenPay(true)}}
-                        hidden={openPay} >
-                    COMPRARRR
-                </button>
+                <div hidden={openPay}>
+                    👉👉👉
+                    <button className="btn2 mx-2"
+                            onClick={() => {setOpenPay(true)}} >
+                          COMPRAR 
+                    </button> 
+                    👈👈👈
+                </div>
             </div>    
          </div>
          :
