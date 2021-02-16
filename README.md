@@ -9,7 +9,6 @@ generen usando la tienda, también serán guardadas Firestore.
 En la Home se muestran 9 productos, disponibles para ser comprados. 
 <br>
 Al navegar sobre riñoneras, mochilas y materas se filtran los productos según la categoría seleccionada y se los muestra en pantalla.
-
 <br>
 Hooks utilizados:
     <ul>
@@ -17,8 +16,7 @@ Hooks utilizados:
         <li>useEffect</li>
         <li>useParams</li>
         <li>useContext</li>
-    </ul>
-    
+    </ul>  
 <br>
 Routing vía BrowserRouter, Switch y Route + Link y NavLink
 </p>
