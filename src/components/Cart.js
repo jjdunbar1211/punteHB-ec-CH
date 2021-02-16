@@ -24,9 +24,7 @@ const Cart = ( {reload, setReload} ) => {
         const batchProducts = db.batch()
 
         cart.forEach( itemCart => {
-            console.log(itemCart)
             let aux = itemCart.stock - itemCart.amount
-            console.log(aux)
             batchProducts.update(products.doc(itemCart.id),{initialStock: aux})
         })
 

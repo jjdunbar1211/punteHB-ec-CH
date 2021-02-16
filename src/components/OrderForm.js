@@ -22,7 +22,6 @@ const OrderForm = ({fnes}) => {
         if (firstNameInput.length < 6 || firstNameInput.length > 15) {
             firstNameOK = false;
             setErrorMsg({...errorMsg, firstName: "Nombre debe tener entre 6 y 15 caracteres"})
-            console.log(errorMsg)
         }
 
         fnes.setName(firstNameInput)
@@ -91,7 +90,6 @@ const OrderForm = ({fnes}) => {
     return (
         <div>
             <form >
-                {console.log('testeando ' + firstNameValid && phoneValid && emailValid && emailConfirmValid)}
                 <div className="flex justify-center mt-4 ">
                     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col">
                         {/* firstName */}
