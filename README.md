@@ -12,19 +12,19 @@ Al navegar sobre riñoneras, mochilas y materas se filtran los productos según 
 <hr>
 <h3> E-Commerce PunteHB funcionando </h3>
 <ul>
-    <li> <h2> Navegación principal </h2><img src="flow-ec-punteHB/flow-inicial.gif" ></li>
+    <li> <h4> Navegación principal </h4><img src="flow-ec-punteHB/flow-inicial.gif" ></li>
 </ul>
 <ul>
-    <li> <h2> Navegación por Id de producto </h2><img src="flow-ec-punteHB/flow-itemsid.gif" ></li>
+    <li> <h4> Navegación por Id de producto </h4><img src="flow-ec-punteHB/flow-itemsid.gif" ></li>
 </ul>
 <ul>
-    <li> <h2> Proceso de compra </h2><img src="flow-ec-punteHB/flow-compra1.gif" ></li>
+    <li> <h4> Proceso de compra </h4><img src="flow-ec-punteHB/flow-compra1.gif" ></li>
 </ul>
 <ul>
-    <li> <h2> Proceso compra (bis) </h2><img src="flow-ec-punteHB/flow-compra2.gif" ></li>
+    <li> <h4> Proceso compra (bis) </h4><img src="flow-ec-punteHB/flow-compra2.gif" ></li>
 </ul>
 <ul>
-    <li> <h2> Cart persistente (bis) </h2><img src="flow-ec-punteHB/flow-cartpersistente.gif" ></li>
+    <li> <h4> Cart persistente (bis) </h4><img src="flow-ec-punteHB/flow-cartpersistente.gif" ></li>
 </ul>
 <hr>
 <h3> Requisitos Básicos </h3>
