@@ -12,7 +12,7 @@ Al navegar sobre riñoneras, mochilas y materas se filtran los productos según 
 <hr>
 <h3> Muestras del E-Commerce funcionando </h3>
 <ul>
-    <li> ![] (flow-ec-punteHB/flow-cartpersistente.gif)</li>
+    <li> <img src="flow-ec-punteHB/flow-inicial.gif" ></li>
 </ul>
 <hr>
 <h3> Requisitos Básicos </h3>
