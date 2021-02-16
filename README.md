@@ -4,15 +4,13 @@
 Proyecto realizado con React, Tailwindcss y Firebase. 
 Los productos disponibles están guardados en Firestore y las imágenes utilizadas en el Storage de Firebase. Las órdenes de compra, que se 
 generen usando la tienda, también serán guardadas Firestore.
-
 <br>
 En la Home se muestran 9 productos, disponibles para ser comprados. 
 <br>
 Al navegar sobre riñoneras, mochilas y materas se filtran los productos según la categoría seleccionada y se los muestra en pantalla.
-<br>
+</p>
 <hr>
-Hooks utilizados:
-<br>
+<h3>Hooks utilizados: </h3>
     <ul>
         <li>useState</li>
         <li>useEffect</li>
@@ -20,8 +18,6 @@ Hooks utilizados:
         <li>useContext</li>
     </ul>  
 Routing vía BrowserRouter, Switch y Route + Link y NavLink
-</p>
-
 <hr>
 <h3>Librerías utilizadas: </h3>
 <ul>
