@@ -19,10 +19,10 @@ const NavBar = ( {categories} ) => {
                 <ul className="flex justify-end items-center">
                     {
                         categories.map( c => {
-                            return (<li key={c.id} className="ml-4 border-b-2 border-pink-200 hover:border-pink-500 transform hover:scale-105 transition-all ease-out duration-300">
+                            <li key={c.id} className="ml-4 border-b-2 border-pink-200 hover:border-pink-500 transform hover:scale-105 transition-all ease-out duration-300">
                                 <NavLink to={`/category/${c.key}`} className="text-xl font-semibold">{ c.key }</NavLink>
-                            </li>)}
-                        )
+                            </li>
+                        })
                     }
                     <li className="ml-4">
                         {/* eslint-disable-next-line */}
