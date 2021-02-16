@@ -10,6 +10,7 @@ En la Home se muestran 9 productos, disponibles para ser comprados.
 <br>
 Al navegar sobre riñoneras, mochilas y materas se filtran los productos según la categoría seleccionada y se los muestra en pantalla.
 <br>
+<br>
 Hooks utilizados:
     <ul>
         <li>useState</li>
