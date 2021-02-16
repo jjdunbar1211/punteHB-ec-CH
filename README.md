@@ -2,7 +2,7 @@
 
 <p>
 Proyecto realizado con React, Tailwindcss y Firebase. 
-Los productos disponibles están guardados Firestore y las imágenes utilizadas en el Storage de Firebase. Las órdenes de compra, que se 
+Los productos disponibles están guardados en Firestore y las imágenes utilizadas en el Storage de Firebase. Las órdenes de compra, que se 
 generen usando la tienda, también serán guardadas Firestore.
 
 <br>
@@ -18,7 +18,8 @@ Hooks utilizados:
         <li>useParams</li>
         <li>useContext</li>
     </ul>
-
+    
+<br>
 Routing vía BrowserRouter, Switch y Route + Link y NavLink
 </p>
 
