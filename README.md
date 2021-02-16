@@ -10,6 +10,11 @@ En la Home se muestran 9 productos, disponibles para ser comprados.
 Al navegar sobre riñoneras, mochilas y materas se filtran los productos según la categoría seleccionada y se los muestra en pantalla.
 </p>
 <hr>
+<h3> Muestras del E-Commerce funcionando </h3>
+<ul>
+    <li> ![] (flow-ec-punteHB/flow-cartpersistente.gif)</li>
+</ul>
+<hr>
 <h3> Requisitos Básicos </h3>
 <ul>
     <li> Todos los requisitos básicos están implementados</li>
