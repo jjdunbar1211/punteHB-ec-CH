@@ -53,6 +53,7 @@ Routing vía BrowserRouter, Switch y Route + Link y NavLink
 <hr>
 <h3>Librerías utilizadas </h3>
 <ul>
-    <li>Tailwindcss. Se utilizó para personalizar la presentación visual de la tienda   ---  https://tailwindcss.com/ </li>
-    <li>React-router-dom. Usada para resolver el routeo de la tienda -- https://www.npmjs.com/package/react-router-dom</li>
+    <li>Tailwindcss. Se utilizó para personalizar la presentación visual de la tienda. https://tailwindcss.com/ </li>
+    <li>React-router-dom. Usada para resolver el routeo de la tienda. https://www.npmjs.com/package/react-router-dom</li>
+    <li>react-spinners. Provee spinners animados sencillos, listos para usar. https://www.npmjs.com/package/react-spinners</li>
 </ul>
