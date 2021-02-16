@@ -21,13 +21,13 @@ Al navegar sobre riñoneras, mochilas y materas se filtran los productos según 
     <li> <h4> Proceso de compra </h4><img src="flow-ec-punteHB/flow-compra1.gif" ></li>
 </ul>
 <ul>
-    <li> <h4> Proceso compra (bis) </h4><img src="flow-ec-punteHB/flow-compra2.gif" ></li>
+    <li> <h4> Proceso de compra (bis) </h4><img src="flow-ec-punteHB/flow-compra2.gif" ></li>
 </ul>
 <ul>
-    <li> <h4> Cart persistente (bis) </h4><img src="flow-ec-punteHB/flow-cartpersistente.gif" ></li>
+    <li> <h4> Cart persistente </h4><img src="flow-ec-punteHB/flow-cartpersistente.gif" ></li>
 </ul>
 <ul>
-    <li> <h4> Categorías dinámicas (bis) </h4><img src="flow-ec-punteHB/flow-categories.gif" ></li>
+    <li> <h4> Categorías dinámicas </h4><img src="flow-ec-punteHB/flow-categories.gif" ></li>
 </ul>
 <hr>
 <h3> Requisitos Básicos </h3>
