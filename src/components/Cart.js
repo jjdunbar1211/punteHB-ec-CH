@@ -6,7 +6,7 @@ import firebase from 'firebase/app';
 import OrderForm from './OrderForm';
 import OrderTable from './orderTable';
 
-const Cart = () => {
+const Cart = ( {reload, setReload} ) => {
 
     const {cart, clearCart, total} = useContext(CartContext);
 
@@ -34,7 +34,7 @@ const Cart = () => {
         batchProducts
             .commit()
             .then(()=> {
-                console.log("Bache ok")
+                setReload(!reload)
             })
             .catch(e => console.log(e))
     }
@@ -49,7 +49,7 @@ const Cart = () => {
             items : cart.map(function(obj){
                 return {id: obj.id, name: obj.name, price: obj.price, quantity: obj.amount} ;
              }),
-            date: firebase.tot.Timestamp.fromDate(new Date()),
+            date: firebase.firestore.Timestamp.fromDate(new Date()),
             total: total,
         }
 
@@ -61,6 +61,7 @@ const Cart = () => {
 
         setOpenPay(false)
         clearCart()
+
     }
     
     return (
@@ -95,7 +96,7 @@ const Cart = () => {
                         </Link>
                     👈👈👈
                 </div>
-        </div>)
+          </div>)
         }
     </div>
     )

@@ -153,7 +153,7 @@ const OrderForm = ({fnes}) => {
                         
                         {/* buttons */}
                         <div className="flex  ">
-                            <Link to="/">       
+                            <Link to="/" >       
                                 <button type="submit" disabled={!(firstNameValid && phoneValid && emailValid && emailConfirmValid)} className={ !(firstNameValid && phoneValid && emailValid && emailConfirmValid) ? "btn1" : "btn2"} 
                                         onClick={() => {
                                             fnes.submitOrder()

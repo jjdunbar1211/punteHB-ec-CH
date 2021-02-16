@@ -10,6 +10,7 @@ import { useState, useEffect } from "react";
 function App() {
 
   const [fireItems, setFireItems] = useState([])
+  const [reload, setReload] = useState(false)
   const [fireCategories, setFireCategories] = useState([])
   
   useEffect(() => {
@@ -28,7 +29,7 @@ function App() {
       })
 
     categoriesQuery.then( result => {setFireCategories(result.docs.map( p => ({ idCategory: p.id, ...p.data()})))})
-  }, [])
+  }, [reload])
 
   return (
     <CartProvider>
@@ -45,7 +46,7 @@ function App() {
             <ItemDetailContainer />
           </Route>
           <Route exact path="/cart">
-            <Cart />
+            <Cart reload={reload} setReload={setReload} />
           </Route>
         </Switch>
       </BrowserRouter>
