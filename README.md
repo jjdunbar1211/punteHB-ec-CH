@@ -10,7 +10,7 @@ En la Home se muestran 9 productos, disponibles para ser comprados.
 Al navegar sobre riñoneras, mochilas y materas se filtran los productos según la categoría seleccionada y se los muestra en pantalla.
 </p>
 <hr>
-<h3> E-Commerce PunteHB funcionando </h3>
+<h3> E-Commerce PunteHB funcionando... </h3>
 <ul>
     <li> <h4> Navegación principal </h4><img src="flow-ec-punteHB/flow-inicial.gif" ></li>
 </ul>
@@ -25,6 +25,9 @@ Al navegar sobre riñoneras, mochilas y materas se filtran los productos según 
 </ul>
 <ul>
     <li> <h4> Cart persistente (bis) </h4><img src="flow-ec-punteHB/flow-cartpersistente.gif" ></li>
+</ul>
+<ul>
+    <li> <h4> Categorías dinámicas (bis) </h4><img src="flow-ec-punteHB/flow-categories.gif" ></li>
 </ul>
 <hr>
 <h3> Requisitos Básicos </h3>
