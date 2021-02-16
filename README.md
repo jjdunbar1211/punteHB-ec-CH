@@ -22,7 +22,7 @@ Al navegar sobre riñoneras, mochilas y materas se filtran los productos según 
     </ul>  
 Routing vía BrowserRouter, Switch y Route + Link y NavLink
 <hr>
-<h3>Hooks utilizados: </h3>
+<h3>Hooks utilizados </h3>
     <ul>
         <li>useState</li>
         <li>useEffect</li>
@@ -31,7 +31,7 @@ Routing vía BrowserRouter, Switch y Route + Link y NavLink
     </ul>  
 Routing vía BrowserRouter, Switch y Route + Link y NavLink
 <hr>
-<h3>Librerías utilizadas: </h3>
+<h3>Librerías utilizadas </h3>
 <ul>
     <li>Tailwindcss. Se utilizó para personalizar la presentación visual de la tienda   ---  https://tailwindcss.com/ </li>
     <li>React-router-dom. Usada para resolver el routeo de la tienda -- https://www.npmjs.com/package/react-router-dom</li>
