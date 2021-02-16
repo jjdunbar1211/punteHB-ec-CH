@@ -10,14 +10,13 @@ const Cart = ( {reload, setReload} ) => {
 
     const {cart, clearCart, total} = useContext(CartContext);
 
-    // 
     const [ openPay, setOpenPay ] = useState(false)
     // campos que me piden para la orden de compra
     const [ name, setName ] = useState('')
     const [ phone, setPhone ] = useState()
     const [ email, setEmail ] = useState()
 
-    //Funcion para actualizr los stocks en tot de los productos recien comprados
+    // fn para actualizar los stocks de los productos que fueron comprados
     const updateStocks = () => {
        
         const db = firestore

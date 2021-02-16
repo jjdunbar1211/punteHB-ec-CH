@@ -1,15 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-
-// dsp vemos 
-/* const ValidationMessage = props => {
-    if(!props.valid) {
-        return(
-        <div className="alert-danger" role="alert">{props.message}</div>
-        )
-    }
-    return null;
-} */
 
 const OrderForm = ({fnes}) => {
 
@@ -23,15 +13,6 @@ const OrderForm = ({fnes}) => {
     const [phoneValid, setPhoneValid] = useState(false)
     const [emailValid, setEmailValid] = useState(false)
     const [emailConfirmValid, setEmailConfirmValid] = useState(false)
-    //const [formValid, setFormValid] = useState()
-    
-    // fn para validar el formulario completo
-    /*  const validateForm = () => {
-
-        setFormValid(firstNameValid && phoneValid && emailValid && emailConfirmValid)
-        
-    }
-     */
 
     // fn para validad firstName
     const validateFirstName = (firstNameInput) => {
@@ -47,23 +28,21 @@ const OrderForm = ({fnes}) => {
         fnes.setName(firstNameInput)
         setFirstNameValid(firstNameOK) 
          
-        //this.setState({usernameValid, errorMsg}, this.validateForm);
     }
 
-        // fn para validad el celular
-        const validatePhone = (phoneInput) => {
+    // fn para validad el celular
+    const validatePhone = (phoneInput) => {
+        let phoneOK = true;
 
-            let phoneOK = true;
-    
-            if (!/^[\d]{2}[-]*([\d]{4}[-]*){2}$/.test(phoneInput)) {
-                phoneOK = false;
-                setErrorMsg({...errorMsg, phone: "Formato de teléfono celular no válido. Formato: xx-xxxx-xxxx"})
-            }
-            
-            fnes.setPhone(phoneInput)
-            setPhoneValid(phoneOK)
-            //this.setState({emailValid, errorMsg}, this.validateForm);
+        if (!/^[\d]{2}[-]*([\d]{4}[-]*){2}$/.test(phoneInput)) {
+            phoneOK = false;
+            setErrorMsg({...errorMsg, phone: "Formato de teléfono celular no válido. Formato: xx-xxxx-xxxx"})
         }
+        
+        fnes.setPhone(phoneInput)
+        setPhoneValid(phoneOK)
+       
+    }
 
     // fn para validad el email
     const validateEmail = (emailInput) => {
@@ -76,7 +55,7 @@ const OrderForm = ({fnes}) => {
         }
 
         setEmailValid(emailOK)
-        //this.setState({emailValid, errorMsg}, this.validateForm);
+       
     }
 
     // fn para validad que los emails ingresados coincidan
@@ -91,11 +70,12 @@ const OrderForm = ({fnes}) => {
 
         fnes.setEmail(email2Input)
         setEmailConfirmValid(emailConfirmOK)
-        //this.setState({ passwordConfirmValid, errorMsg}, this.validateForm);
+        
     }
 
     // fn para limpiar el formulario
     const resetForm = (evt) => {
+        
         evt.preventDefault()
         setFirstName('')
         setPhone('')
