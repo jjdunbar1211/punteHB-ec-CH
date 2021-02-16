@@ -10,6 +10,18 @@ En la Home se muestran 9 productos, disponibles para ser comprados.
 Al navegar sobre riñoneras, mochilas y materas se filtran los productos según la categoría seleccionada y se los muestra en pantalla.
 </p>
 <hr>
+<h3> Requisitos Básicos </h3>
+<ul>
+    <li> Todos los requisitos básicos están implementados</li>
+</ul>
+<h3> Requisitos Extras </h3>
+    <ul>
+        <li>Categories dinámicas</li>
+        <li>Cart Persistente</li>
+        <li>Stock Check</li>
+    </ul>  
+Routing vía BrowserRouter, Switch y Route + Link y NavLink
+<hr>
 <h3>Hooks utilizados: </h3>
     <ul>
         <li>useState</li>
